@@ -11,5 +11,5 @@ public interface MemberMapper {
 	//로그인
 	public User login(User vo);  //select
 	//회원가입
-	public User register(User vo); //inser
+	public void register(User vo); //inser
 }
