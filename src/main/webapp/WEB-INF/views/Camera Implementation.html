@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- 카메라 촬영 -->
+        <style>
+          #cameraFileInput {
+            display: none;
+          }
+          
+          #pictureFromCamera {
+            width: 15%;
+            height: auto; 
+            margin-top: 30px;
+          }
+          
+          .btn {
+            display: inline-block;
+            background-color: #d9ff00;
+            color: rgb(2, 2, 2);
+            padding: 10px 15px;
+            border-radius: 100px;
+            font-size: 40px;
+            cursor: pointer;
+          }
+          
+          .btn:hover {
+            filter: brightness(0.9);
+
+            
+          }
+        
+        </style>
+    <!-- 카메라 촬영 -->
+   
+      <!-- These meta tags are not necessary for the camera to work -->
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      
+
+      <title>Camera in browsers - pixo</title>
+
+      <!-- imports the webpage's stylesheet -->
+      <link rel="stylesheet" href="style.css" />
+
+      <!-- imports the webpage's javascript file -->
+      <script src="script.js" defer></script>
+
+      <!-- 카메라 촬영 -->
+
+  </head>
+
+
+  <body>
+    <!-- 카메라 촬영 -->
+      <h1>재료를 촬영해주세요</h1>
+
+      <br>
+
+      <!-- The `label` is attached to the hidden file input -->
+      <label for="cameraFileInput">
+        <span class="btn">촬영</span>
+
+        <!-- The hidden file `input` for opening the native camera -->
+        <input
+          id="cameraFileInput"
+          type="file"
+          accept="image/*"
+          capture="environment"
+        />
+      </label>
+
+      <!-- displays the picture uploaded from the native camera -->
+      
+       <img id="pictureFromCamera" /> 
+    <!-- 카메라 촬영 -->
+    
+  </body>
+      <!-- 카메라 촬영 -->
+
+      <script>
+
+     
+          document
+            .getElementById("cameraFileInput")
+            .addEventListener("change", function () {
+          document
+            .getElementById("pictureFromCamera")
+            .setAttribute("src", window.URL.createObjectURL(this.files[0]));
+            
+            });
+      </script>
+
+      <!-- 카메라 촬영 -->
+</html> 
