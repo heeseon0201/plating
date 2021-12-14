@@ -1,5 +1,6 @@
 package kr.board.domain;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 import lombok.AllArgsConstructor;
@@ -17,7 +18,7 @@ public class User {
 	   private String member_name;
 	   private String member_email;
 	   private String member_phone;
-	   private Date member_date;
+	   private Timestamp member_date;
 	   private String member_yesno;
 	   // setter, getter -> Lombok(롬복)
 }
