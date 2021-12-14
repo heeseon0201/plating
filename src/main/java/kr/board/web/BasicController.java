@@ -4,6 +4,8 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.board.domain.User;
@@ -17,8 +19,12 @@ public class BasicController {
 	MemberMapper mapper;
 	
 	@RequestMapping("/")  //127.0.0.1:8081/web/ -> board.jsp
-	public String main() {
+	public String mainlogin() {
 		return "login";
+	}
+	@GetMapping("/join.do")  //127.0.0.1:8081/web/ -> board.jsp
+	public String mainjoin() {
+		return "join";
 	}
 	
 	//로그인
@@ -41,10 +47,11 @@ public class BasicController {
 	}
 	
 	//회원가입
-	@RequestMapping("/register.do")
+	@PostMapping("/join.do")
 	public String register(User vo, HttpSession session) {
-	mapper.register(vo);
-	return "login"; 
+		mapper.register(vo);
+		session.setAttribute("userVO", vo);	
+	return "redirect:/"; 
 	}
 }
 

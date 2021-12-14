@@ -5,8 +5,8 @@
 <mapper namespace="kr.board.mapper.MemberMapper">
     <!-- 회원가입 -->
     <insert id="register" parameterType="kr.board.domain.User">
-        insert into tbl_member(member_id, member_pwd, member_nickname, member_email, member_phone)
-        values(#{member_id}, #{member_pwd}, #{member_nickname}, #{member_email}, #{member_phone})
+        insert into tbl_member(member_id, member_pwd, member_nickname, member_name, member_email, member_phone)
+        values(#{member_id}, #{member_pwd}, #{member_nickname},#{member_name}, #{member_email}, #{member_phone})
     </insert>
     <!-- 로그인 -->
     <select id="login" resultType="kr.board.domain.User" parameterType="kr.board.domain.User">
