@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.board.mapper.UploadMapper"> 
+    <insert id="upload" parameterType="kr.board.domain.Tbl_plating">
+        insert into tbl_plating(plating_content, reg_date, member_id, plating_pic1, plating_pic2, plating_pic3)
+        values(#{upload_file}, now(), #{member_id}, #{plating_pic1}, #{plating_pic2}, #{plating_pic3})
+    </insert>
+</mapper>
