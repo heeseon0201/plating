@@ -1,8 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="cpath" value="${pageContext.request.contextPath}"/>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%> 
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
+  <meta charset="EUC-KR">
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <meta content="width=device-width,initial-scale=1" name="viewport">
   <meta content="description" name="description">
@@ -17,7 +21,7 @@
 
 
 
-  <title>ë§ˆì´í˜ì´ì§€</title>  
+  <title>¸¶ÀÌÆäÀÌÁö</title>  
 
 <link href="main.css" rel="stylesheet">
 
@@ -38,7 +42,7 @@ textarea{
 }
 
 </style>
-<!--<link href="ë§ˆì´í˜ì´ì§€(ìˆ˜ì •ì™„ë£Œ)\style\detailpage.css" rel="stylesheet">-->
+<!--<link href="¸¶ÀÌÆäÀÌÁö(¼öÁ¤¿Ï·á)\style\detailpage.css" rel="stylesheet">-->
 </head>
 <body>
 <!-- Add your content of header -->
@@ -67,9 +71,9 @@ textarea{
     <nav class="sidebar">
       <div class="navbar-collapse" id="navbar-collapse">
         <div class="site-header hidden-xs">
-            <a class="site-brand" href="ë©”ì¸ë°”1.html" title="">
+            <a class="site-brand" href="¸ŞÀÎ¹Ù1.html" title="">
               <p class="material-icons-outlined">
-                <img src="ë©”ë‰´ë°”.png">
+                <img src="¸Ş´º¹Ù.png">
               </p> 
               <img class="img-responsive site-logo" alt="" src="./assets/images/mashup-logo.svg">
               Main
@@ -101,11 +105,11 @@ textarea{
   <div class="col-xs-12 col-md-8">
 
     <div class="section-container-spacer">
-        <h1>ë§ˆì´í˜ì´ì§€</h1>
+        <h1>¸¶ÀÌÆäÀÌÁö</h1>
         <div class="feeds">
-          <!--ì‚¬ì§„ì˜ ìƒì„¸ë¶€ë¶„-->
+          <!--»çÁøÀÇ »ó¼¼ºÎºĞ-->
           <article>
-            <!--ë‹‰ë„¤ì„ ë¶€ë¶„-->
+            <!--´Ğ³×ÀÓ ºÎºĞ-->
             <header>
               <div class="profile-of-article">
                 <svg xmlns="http://www.w3.org/2000/svg" width="10%" height="4%" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
@@ -114,11 +118,11 @@ textarea{
                 <span class="userID main-id point-span">nickname</span>
               </div>
             </header>
-            <!--í”Œë ˆì´íŒ… ì‚¬ì§„-->
+            <!--ÇÃ·¹ÀÌÆÃ »çÁø-->
             <div class="main-image">
-              <img src="ë§ˆì´í˜ì´ì§€(ìˆ˜ì •ì™„ë£Œ)\img-0412.jpg" class="main-img" />
+              <img src="¸¶ÀÌÆäÀÌÁö(¼öÁ¤¿Ï·á)\img-0412.jpg" class="main-img" />
             </div>
-            <!--ë³„ì -->
+            <!--º°Á¡-->
             <div class="icons-react">
               <div class="icons-left">
                 <svg xmlns="http://www.w3.org/2000/svg" width="3vw" height="3vh" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
@@ -138,10 +142,10 @@ textarea{
                 </svg>
               </div>
             </div>
-            <!-- í”Œë ˆì´íŒ…ì˜ ì„¤ëª… ë¶€ë¶„ -->
+            <!-- ÇÃ·¹ÀÌÆÃÀÇ ¼³¸í ºÎºĞ -->
             <div class="description">
               2021.03.21.<br />
-              ìŠ¤í…Œì´í¬ í”Œë ˆì´íŒ…
+              ½ºÅ×ÀÌÅ© ÇÃ·¹ÀÌÆÃ
             </div>
             <textarea style="resize: none;">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae quod iure architecto labore a quia totam numquam, accusantium, 
@@ -149,9 +153,9 @@ textarea{
             </textarea>
           </article>
         </div><div class="feeds">
-          <!--ì‚¬ì§„ì˜ ìƒì„¸ë¶€ë¶„-->
+          <!--»çÁøÀÇ »ó¼¼ºÎºĞ-->
           <article>
-            <!--ë‹‰ë„¤ì„ ë¶€ë¶„-->
+            <!--´Ğ³×ÀÓ ºÎºĞ-->
             <header>
               <div class="profile-of-article">
                 <svg xmlns="http://www.w3.org/2000/svg" width="10%" height="4%" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
@@ -161,11 +165,11 @@ textarea{
                 n-id point-span">nickname</span>
               </div>
             </header>
-            <!--í”Œë ˆì´íŒ… ì‚¬ì§„-->
+            <!--ÇÃ·¹ÀÌÆÃ »çÁø-->
             <div class="main-image">
-              <img src="ë§ˆì´í˜ì´ì§€(ìˆ˜ì •ì™„ë£Œ)\img-0412.jpg" class="main-img" />
+              <img src="¸¶ÀÌÆäÀÌÁö(¼öÁ¤¿Ï·á)\img-0412.jpg" class="main-img" />
             </div>
-            <!--ë³„ì -->
+            <!--º°Á¡-->
             <div class="icons-react">
               <div class="icons-left">
                 <svg xmlns="http://www.w3.org/2000/svg" width="3vw" height="3vh" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
@@ -185,10 +189,10 @@ textarea{
                 </svg>
               </div>
             </div>
-            <!-- í”Œë ˆì´íŒ…ì˜ ì„¤ëª… ë¶€ë¶„ -->
+            <!-- ÇÃ·¹ÀÌÆÃÀÇ ¼³¸í ºÎºĞ -->
             <div class="description">
               2021.03.21.<br />
-              ìŠ¤í…Œì´í¬ í”Œë ˆì´íŒ…
+              ½ºÅ×ÀÌÅ© ÇÃ·¹ÀÌÆÃ
             </div>
             <textarea style="resize: none;">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae quod iure architecto labore a quia totam numquam, accusantium, 
@@ -199,14 +203,14 @@ textarea{
     </div>
 
     <div class="section-container-spacer">
-       <!--ìƒí’ˆ íƒ€ì´í‹€-->
+       <!--»óÇ° Å¸ÀÌÆ²-->
     <section class="goods_inner">
       <div class="goods-title">
         <p class="goods-intro">
-          í•¨ê»˜ ë³´ë©´ <span class="goods-text"> ì¢‹ì€ í”Œë ˆì´íŒ… ìƒí’ˆ</span>ì´ì—ìš”
+          ÇÔ²² º¸¸é <span class="goods-text"> ÁÁÀº ÇÃ·¹ÀÌÆÃ »óÇ°</span>ÀÌ¿¡¿ä
         </p>
      </div>
-     <!--ìƒí’ˆ ë³´ì—¬ì£¼ê¸°-->
+     <!--»óÇ° º¸¿©ÁÖ±â-->
      <div class="slideshow-container">
 
       <div class="mySlides">
