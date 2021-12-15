@@ -20,5 +20,5 @@ public class User {
 	   private String member_phone; //회원 연락처
 	   private Timestamp member_date; //회원 가입일자
 	   private String member_yesno; //관리자여부
-	   // setter, getter -> Lombok(롬복)
+
 }
