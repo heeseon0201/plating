@@ -12,4 +12,8 @@
     <select id="login" resultType="kr.board.domain.User" parameterType="kr.board.domain.User">
       select * from tbl_member where member_id=#{member_id} and member_pwd = #{member_pwd}
     </select>
+    <!-- 메인페이지 열기 -->
+    <select id="main" resultType="kr.board.domain.Tbl_plating">
+        select * from tbl_plating
+    </select>
 </mapper>

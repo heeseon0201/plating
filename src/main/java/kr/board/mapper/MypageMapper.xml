@@ -25,4 +25,15 @@
     		INNER JOIN tbl_my_rating t3 ON t1.plating_seq = t3.plating_seq
 		WHERE t1.plating_seq = #{plating_seq};
     </select>
+    <!-- 플레이팅 상세페이지 출력 -->
+    <select id="plating_detail" parameterType="int" resultType="kr.board.domain.Tbl_plating">
+        select * from tbl_plating where plating_seq = #{plating_seq}
+    </select>
+    
+    <select id="goodsView" parameterType="int" resultType="kr.board.domain.Tbl_reco_goods">
+        select goods_pic1, goods_pic2, goods_pic3
+		from tbl_plating t1 inner join tbl_reco_goods t2
+		on t1.plating_seq = t2.plating_seq
+		where t1.plating_seq = #{plating_seq}
+    </select>
 </mapper>

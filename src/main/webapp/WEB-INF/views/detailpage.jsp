@@ -1,3 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<c:set var="cpath" value="${pageContext.request.contextPath}"/> 
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%> 
 <!DOCTYPE html>
 <html>
@@ -157,42 +162,31 @@ textarea{
                 <svg xmlns="http://www.w3.org/2000/svg" width="10%" height="4%" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                   <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
                 </svg>
-                <span class="userID mai
-                n-id point-span">nickname</span>
+                <span class="userID main-id point-span">nickname</span>
               </div>
             </header>
             <!--플레이팅 사진-->
             <div class="main-image">
-              <img src="마이페이지(수정완료)\img-0412.jpg" class="main-img" />
+              <img src="<spring:url value='/image/${vo.plating_pic}'/>" class="main-img" />
             </div>
             <!--별점-->
             <div class="icons-react">
               <div class="icons-left">
+              <c:forEach begin="1" end="${rating}">
                 <svg xmlns="http://www.w3.org/2000/svg" width="3vw" height="3vh" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
                   <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                 </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="3vw" height="3vh" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-                  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-                </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="3vw" height="3vh" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-                  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-                </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="3vw" height="3vh" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-                  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-                </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="3vw" height="3vh" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-                  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-                </svg>
+               </c:forEach>
               </div>
             </div>
             <!-- 플레이팅의 설명 부분 -->
             <div class="description">
-              2021.03.21.<br />
-              스테이크 플레이팅
+              ${platingVO.plating_reg_date}<br />
+            ${platingVO.plating_content}
             </div>
+            
             <textarea style="resize: none;">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae quod iure architecto labore a quia totam numquam, accusantium, 
-              excepturi ipsa, odit iusto eaque ut magnam nam atque ullam soluta? Vitae!
+				${platingVO.plating_content}
             </textarea>
           </article>
         </div>
@@ -208,21 +202,18 @@ textarea{
      </div>
      <!--상품 보여주기-->
      <div class="slideshow-container">
-
-      <div class="mySlides">
-        <div class="numbertext">1 / 3</div>
-          <img src="images\img-14.jpg" style="width: 80vw; height : 25vh;" />
-      </div>
-      
-      <div class="mySlides">
-        <div class="numbertext">2 / 3</div>
-          <img src="images\img-14.jpg" style="width: 80vw; height : 25vh;" />
-      </div>
-      
-      <div class="mySlides">
-        <div class="numbertext">3 / 3</div>
-          <img src="images\img-14.jpg" style="width: 80vw; height : 25vh;" />
-      </div>
+	      <div class="mySlides">
+	        <div class="numbertext">1 / 1</div>
+	          <img src="<spring:url value='/image/${goods_picture.goods_pic1}'/>" style="width: 80vw; height : 25vh;" />
+	      </div>
+	      <div class="mySlides">
+	        <div class="numbertext">1 / 2</div>
+	          <img src="<spring:url value='/image/${goods_picture.goods_pic2}'/>" style="width: 80vw; height : 25vh;" />
+	      </div>
+	      <div class="mySlides">
+	        <div class="numbertext">1 / 3</div>
+	          <img src="<spring:url value='/image/${goods_picture.goods_pic3}'/>" style="width: 80vw; height : 25vh;" />
+	      </div>
       
       <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
       <a class="next" onclick="plusSlides(1)">&#10095;</a>
