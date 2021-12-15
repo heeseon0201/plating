@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.board.mapper.MypageMapper"> 
+    <!-- 나의 플레이팅 업로드 -->
+    <insert id="upload" parameterType="kr.board.domain.Tbl_plating">
+        insert into tbl_plating(plating_content, plating_reg_date, member_id, plating_pic, cook_name)
+        values(#{plating_content}, now(), #{member_id}, #{plating_pic}, #{cook_name})
+    </insert>
+    <!-- 나의 플레이팅 출력 -->
+    <select id="platingView" parameterType="String" resultType="kr.board.domain.Tbl_plating">
+        select * from tbl_plating where member_id = #{member_id}
+    </select>
+    <!-- 나의 재료 출력 -->
+    <select id="ingreView" parameterType="String" resultType="kr.board.domain.Tbl_ingredient">
+        select * from tbl_ingredient where member_id = #{member_id}
+    </select>
+    
+    <!-- 사진 별점 출력 -->
+    <select id="ratingView" parameterType="int" resultType="int">
+        SELECT t3.my_pic_point
+		FROM tbl_plating t1 
+    		INNER JOIN tbl_member t2 ON t1.member_id = t2.member_id
+    		INNER JOIN tbl_my_rating t3 ON t1.plating_seq = t3.plating_seq
+		WHERE t1.plating_seq = #{plating_seq};
+    </select>
+</mapper>
