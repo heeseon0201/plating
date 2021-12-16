@@ -81,10 +81,8 @@ public class BasicController {
 	}
 	//파일 전송 테스트
 		@PostMapping("/fileupload.file")
-		@ResponseBody
-		public String test(@RequestParam MultipartFile file) {
-			
-			
+		
+		public String test(@RequestParam MultipartFile file, HttpSession session) {
 			 String extension = FilenameUtils.getExtension(file.getOriginalFilename());
 
 		        // 실제 저장될 파일이름
@@ -122,10 +120,10 @@ public class BasicController {
 		            throw new RuntimeException("file Save Error");
 		        }
 		        
+			session.setAttribute("filename", file.getOriginalFilename());
 			
 			
-			
-			return file.getOriginalFilename();
+			return "redirect:/upload.do";
 		}
 		
 }

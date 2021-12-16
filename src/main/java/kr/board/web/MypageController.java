@@ -27,6 +27,7 @@ public class MypageController {
 	@RequestMapping("/upload.do")
 	public String Upload(Tbl_plating vo, HttpSession session) { 
 		vo.setMember_id(((User)session.getAttribute("userVO")).getMember_id());
+		vo.setPlating_pic(((String)session.getAttribute("filename")));
 		mapper.upload(vo);
 		System.out.println("업로드 성공");
 		//upload성공: 우선 마이페이지로 이동되게 함
