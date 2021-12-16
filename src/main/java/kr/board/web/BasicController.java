@@ -1,5 +1,7 @@
 package kr.board.web;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +10,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.mysql.cj.Session;
+
+import kr.board.domain.Tbl_plating;
 import kr.board.domain.User;
 import kr.board.mapper.BoardMapper;
 import kr.board.mapper.MemberMapper;
@@ -18,13 +23,10 @@ public class BasicController {
 	@Autowired
 	MemberMapper mapper;
 	
-	@RequestMapping("/")  //127.0.0.1:8081/web/ -> board.jsp
-	public String mainlogin() {
-		return "login";
-	}
-	@GetMapping("/join.do")  //127.0.0.1:8081/web/ -> board.jsp
-	public String mainjoin() {
-		return "join";
+	//회원가입 페이지 열기
+	@GetMapping("/join.do")
+	public String join() {
+		return "join"; 
 	}
 	
 	//로그인
@@ -46,12 +48,24 @@ public class BasicController {
 	return "login";
 	}
 	
-	//회원가입
+	//실제 회원가입
 	@PostMapping("/join.do")
 	public String register(User vo, HttpSession session) {
 		mapper.register(vo);
 		session.setAttribute("userVO", vo);	
 	return "redirect:/"; 
+	}
+	
+	//메인 페이지 열기
+	@RequestMapping("/main.do")
+	public String main(HttpSession session) {
+		List<Tbl_plating> plating_list = mapper.main();
+		if (plating_list != null) {
+			session.setAttribute("plating_list", plating_list);
+			System.out.println("플레이팅 모두 출력 완료");
+		}
+		//메인페이지를 뷰단으로 이동
+		return "main";
 	}
 }
 
