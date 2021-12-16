@@ -124,7 +124,7 @@
       	<div id="fileUpload">
        
 	      <form action="/web/fileupload.file" method=post enctype="multipart/form-data">
-	      <input type="file" name="file">
+	      <input type="file" name="file" capture="environment" accept="image/*">
 	      <input type="submit" value="upload">
 	      </form>
      
