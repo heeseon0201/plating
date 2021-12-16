@@ -77,8 +77,8 @@ public class BasicController {
 		}
 		//메인페이지를 뷰단으로 이동
 		return "main";
+			
 	}
-	
 	//파일 전송 테스트
 		@PostMapping("/fileupload.file")
 		@ResponseBody
@@ -128,9 +128,7 @@ public class BasicController {
 			return file.getOriginalFilename();
 		}
 		
-		
 }
-
 
 
 
