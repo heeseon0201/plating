@@ -119,7 +119,16 @@
           <figcaption></figcaption>
         </figure>
    </c:forEach>
-      </div>  
+      </div>
+      
+      	<div id="fileUpload">
+       
+	      <form action="/web/fileupload.file" method=post enctype="multipart/form-data">
+	      <input type="file" name="file">
+	      <input type="submit" value="upload">
+	      </form>
+     
+     	 </div>  
 </body>
 </html>
     

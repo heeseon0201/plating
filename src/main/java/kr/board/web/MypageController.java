@@ -26,9 +26,12 @@ public class MypageController {
 
 	@RequestMapping("/upload.do")
 	public String Upload(Tbl_plating vo, HttpSession session) { 
+		System.out.println("1");
 		vo.setMember_id(((User)session.getAttribute("userVO")).getMember_id());
-		vo.setPlating_pic(((String)session.getAttribute("filename")));
+		vo.setPlating_pic(((String)session.getAttribute("newFileName")));
+		System.out.println("2");
 		mapper.upload(vo);
+		System.out.println("3");
 		System.out.println("업로드 성공");
 		//upload성공: 우선 마이페이지로 이동되게 함
 		return "mypage2"; 

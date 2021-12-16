@@ -29,7 +29,7 @@ import kr.board.mapper.MemberMapper;
 @Controller
 public class BasicController {
 	
-	private final String filePath = "C:\\upload\\temp\\";
+	private final String filePath = "C:\\test\\steak\\";
     
 	@Autowired
 	MemberMapper mapper;
@@ -80,8 +80,7 @@ public class BasicController {
 			
 	}
 	//파일 전송 테스트
-		@PostMapping("/fileupload.file")
-		
+		@RequestMapping("/fileupload.file")
 		public String test(@RequestParam MultipartFile file, HttpSession session) {
 			 String extension = FilenameUtils.getExtension(file.getOriginalFilename());
 
@@ -120,7 +119,7 @@ public class BasicController {
 		            throw new RuntimeException("file Save Error");
 		        }
 		        
-			session.setAttribute("filename", file.getOriginalFilename());
+			session.setAttribute("filename", newFileName);
 			
 			
 			return "redirect:/upload.do";
