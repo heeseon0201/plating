@@ -117,7 +117,7 @@
 <!--메인헤더-->
 <div id="wrap">
   <header id="main_header">
-    <img src="images\2.jpg">
+    <img src="${cpath}/resources/image/2.jpg">
   </header>
 </div>
 
@@ -142,7 +142,7 @@
       <div class="site-header hidden-xs">
           <a class="site-brand" href="메인바1.html" title="">
             <p class="material-icons-outlined">
-              <img src="${cpath}/resources/images/메뉴바.png">
+              <img src="${cpath}/resources/image/메뉴바.png">
             </p> 
             <img class="img-responsive site-logo" alt="" src="./assets/images/mashup-logo.svg">
             Main
@@ -162,7 +162,7 @@
 
 <!--검색창-->
 <div style="display: flex; justify-content: center;">
-  <img src="camera (1).svg" onclick="#" style="width: 50px; height: 50px; margin-right: 2%;">
+  <img src="${cpath}/resources/image/camera (1).svg" onclick="#" style="width: 50px; height: 50px; margin-right: 2%;">
   <input placeholder="검색" style="width: 900px; height: 50px; margin"/>
   <button style="width: 90px; height: 50px;">찾기</button>
 </div>
@@ -291,7 +291,7 @@ transform: translateX(-50%);">
         <div>
           <span class="fixed-btn">
             <p>
-              <a href="."><img src="images\aside_icon_8.png"></a>
+              <a href="."><img src="${cpath}/resources/image/aside_icon_8.png"></a>
             </p>
           </span>
           <!--<span class="fixed-btn"><p>클릭!</p></span>--> 
