@@ -157,5 +157,5 @@ ON A.plating_seq = B.plating_seq
 ORDER BY B.my_pic_point desc;
 
 commit;
-
-
+select * from tbl_member;
+use plating;
