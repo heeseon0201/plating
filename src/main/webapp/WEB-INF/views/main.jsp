@@ -13,8 +13,8 @@
     <title>메인(핀터레스트)</title>
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
-    <link rel="stylesheet"  href="${cpath}/resource/CSS/main.css">
-    <link rel="stylesheet"  href="${cpath}/resource/CSS/tabbar.css">
+    <link rel="stylesheet"  href="${cpath}/resources/CSS/main.css">
+    <link rel="stylesheet"  href="${cpath}/resources/CSS/tabbar.css">
     <link href="https://fonts.googleapis.com/
     icon?family=Material+Icons|Material+Icons+Sharp|Material+Icons+Two+Tone|Material+Icons+Outlined"
     rel="stylesheet">
@@ -142,7 +142,7 @@
       <div class="site-header hidden-xs">
           <a class="site-brand" href="메인바1.html" title="">
             <p class="material-icons-outlined">
-              <img src="${cpath}/resource/images/메뉴바.png">
+              <img src="${cpath}/resources/images/메뉴바.png">
             </p> 
             <img class="img-responsive site-logo" alt="" src="./assets/images/mashup-logo.svg">
             Main
