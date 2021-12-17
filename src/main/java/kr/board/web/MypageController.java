@@ -37,6 +37,23 @@ public class MypageController {
 		return "mypage2"; 
 	}
 	
+	/*
+	 * 
+	@RequestMapping("/ingre_upload.do")
+	public String Upload(tbl_ingredient vo, HttpSession session){
+		System.out.println("1");
+		vo.setMember_id(((User)session.getAttribute("userVO")).getMember_id());
+		vo.setPlating_pic(((String)session.getAttribute("newFileName")));
+		System.out.println("2");
+		mapper.ingre_upload(vo);
+		System.out.println("3");
+		System.out.println("업로드 성공");
+		//upload성공: 우선 마이페이지로 이동되게 함
+		return "mypage2"; 
+	}
+		
+	*/
+	
 	@RequestMapping("/mypage.do")
 	public String mypage(HttpSession session) {
 		String member_id = ((User)session.getAttribute("userVO")).getMember_id();
@@ -73,6 +90,15 @@ public class MypageController {
 		//upload성공: 우선 디테일페이지로 이동
 		return "detailpage"; 
 	}
-	
+		
+	@RequestMapping("/ingreSelect.do")
+	public String ingreSelect(String cook_name, HttpSession session) {
+		List<Tbl_plating> plating_list = mapper.ingre_select(cook_name);
+		if(plating_list != null) {
+			session.setAttribute("plating_list", plating_list);			
+			System.out.println("추천 플레이팅 출력 성공");
+		}
+		return "main";
+	}
 	
 }
