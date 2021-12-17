@@ -266,6 +266,7 @@ transform: translateX(-50%);">
         </figure>
    </c:forEach>
       </div>
+
     </main>
       <footer>
         <div>

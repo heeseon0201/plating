@@ -21,6 +21,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import com.mysql.cj.Session;
 
+import kr.board.domain.Tbl_ingredient;
 import kr.board.domain.Tbl_plating;
 import kr.board.domain.User;
 import kr.board.mapper.BoardMapper;
@@ -123,7 +124,7 @@ public class BasicController {
 			throw new RuntimeException("file Save Error");
 		}
 
-		// 저장된 사진 db 등록
+		// 저장된 플레이팅 사진 db 등록
 		Tbl_plating plating = new Tbl_plating();
 		
 		//세션에서 로그인 객체 꺼내옴
@@ -132,9 +133,21 @@ public class BasicController {
 		
 	
 		//plating객체에 사진과 멤버 정보 등록
-		plating.setPlating_pic(filePath + newFileName);
+		plating.setPlating_pic("steak\\" + newFileName);
 		plating.setMember_id(member_id);
 		
+		// =================================================
+
+		// 저장된 재료사진 db 등록
+		Tbl_ingredient ingredient = new Tbl_ingredient();
+	
+		// 세션에서 로그인 객체 꺼내옴
+		User member2 = (User)session.getAttribute("userVO");
+		String member_id2 = member2.getMember_id();
+		
+		// ingredient객체에 사진과 멤버 정보등록
+		ingredient.setIngre_pic("steak\\"+ newFileName);
+		ingredient.setMember_id(member_id2);
 		
 	
 		
