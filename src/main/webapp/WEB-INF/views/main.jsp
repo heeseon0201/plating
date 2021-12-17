@@ -13,8 +13,8 @@
     <title>메인(핀터레스트)</title>
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
-    <link rel="stylesheet"  href="${cpath}/resource/CSS/main.css">
-    <link rel="stylesheet"  href="${cpath}/resource/CSS/tabbar.css">
+    <link rel="stylesheet"  href="${cpath}/resources/CSS/main.css">
+    <link rel="stylesheet"  href="${cpath}/resources/CSS/tabbar.css">
     <link href="https://fonts.googleapis.com/
     icon?family=Material+Icons|Material+Icons+Sharp|Material+Icons+Two+Tone|Material+Icons+Outlined"
     rel="stylesheet">
@@ -267,19 +267,19 @@ transform: translateX(-50%);">
    </c:forEach>
       </div>
 
-      <!-- plating 사진 업로드 -->
+      <!-- plating 사진 업로드 --> 
       	<div id="fileUpload">
        
-	      <form action="/web/fileupload.file" method=post enctype="multipart/form-data">
-	      <input type="file" name="file" capture="environment" accept="image/*">
+	       <form action="/web/fileupload.file" method=post enctype="multipart/form-data">
+	      <input type="file" name="file">
 	      <input type="submit" value="upload">
 	      </form>
      
-     	 </div>  
+     	 </div> 
      <!-- ingredient 사진 업로드 -->	 
-     	 <div id="fileUpload">
+     	 <div id="fileUpload2">
        
-	      <form action="/web/fileupload.file" method=post enctype="multipart/form-data">
+	      <form action="/web/ingrefileupload.file" method=post enctype="multipart/form-data">
 	      <input type="file" name="file" capture="environment" accept="image/*">
 	      <input type="submit" value="ingre_upload">
 	      </form>

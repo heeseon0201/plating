@@ -21,4 +21,5 @@ public interface MypageMapper {
 	  public Tbl_plating plating_detail(int plating_seq); //상세페이지에 주요 정보 출력
 	  public Tbl_reco_goods goodsView(int plating_seq);
 	  public void upload(Tbl_ingredient ingredient);
+	  public List<Tbl_plating> ingre_select(String cook_name);
 }
