@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<c:set var="cpath" value="${pageContext.request.contextPath}"/> 
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -255,54 +259,12 @@ transform: translateX(-50%);">
 <!--화면방식-->
   </form>
     <div id="columns">
+    <c:forEach var="vo" items="${plating_list}">
         <figure>
-          <img src="images/img-01.jpg">  
+         <img src="<spring:url value='/image/${vo.plating_pic}'/>"/>
           <figcaption></figcaption>        
         </figure>
-   
-        <figure>
-          <img src="images/img-02.jpg"> 
-          <figcaption></figcaption>         
-        </figure>
-   
-        <figure>
-          <img src="images/img-03.jpg">
-          <figcaption></figcaption>         
-        </figure>
-   
-        <figure>
-          <img src="images/img-04.jpg"> 
-          <figcaption></figcaption>         
-        </figure>
-   
-        <figure>
-          <img src="images/img-05.jpg">
-          <figcaption></figcaption>          
-        </figure>
-   
-        <figure>
-          <img src="images/img-06.jpg">
-          <figcaption></figcaption>         
-        </figure>
-   
-        <figure>
-          <img src="images/img-07.jpg">
-          <figcaption></figcaption>          
-        </figure>    
-   
-        <figure>
-          <img src="images/img-10.jpg">
-          <figcaption></figcaption>          
-        </figure>
-   
-        <figure>
-          <img src="images/img-11.jpg">
-          <figcaption></figcaption>          
-        </figure>   
-    
-       
-        
-       
+   </c:forEach>
       </div>
     </main>
       <footer>
