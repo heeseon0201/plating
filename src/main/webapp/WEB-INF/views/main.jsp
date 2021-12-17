@@ -15,9 +15,6 @@
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
     <link rel="stylesheet"  href="${cpath}/resources/CSS/main.css">
     <link rel="stylesheet"  href="${cpath}/resources/CSS/tabbar.css">
-    <link href="https://fonts.googleapis.com/
-    icon?family=Material+Icons|Material+Icons+Sharp|Material+Icons+Two+Tone|Material+Icons+Outlined"
-    rel="stylesheet">
    <style>
     .form-control{
       border-radius: 15px;
@@ -159,7 +156,7 @@
             <p class="material-icons-outlined">
               <img src="${cpath}/resources/image/메뉴바.png">
             </p> 
-            <img class="img-responsive site-logo" alt="" src="./assets/images/mashup-logo.svg">
+            <!--<img class="img-responsive site-logo" alt="" src="${cpath}/resources/image/mashup-logo.svg">-->
             Main
           </a> 
       </div>
