@@ -275,23 +275,21 @@ transform: translateX(-50%);">
 <!--화면방식-->
   </form>
     <div id="columns">
-    <c:forEach var="vo" items="${plating_list}">
-        <figure>
-         <img src="<spring:url value='/image/${vo.plating_pic}'/>"/>
-          <figcaption></figcaption>        
-        </figure>
-   </c:forEach>
-      </div>
+	    <c:forEach var="vo" items="${plating_list}">
+	        <figure>
+	         	<img src="<spring:url value='/image/${vo.plating_pic}'/>"/>      
+	        </figure>
+	   	</c:forEach>
+    </div>
+    
 
       <!-- plating 사진 업로드 --> 
-      	<div id="fileUpload">
-       
+      	<div id="fileUpload">       
 	       <form action="http://localhost:5000/predict" method=post enctype="multipart/form-data">
-	      <input type="file" name="file">
-	      <input type="submit" value="upload">
-	      </form>
-     
-     	 </div> 
+		      <input type="file" name="file">
+		      <input type="submit" value="upload">
+	       </form>     
+     	</div> 
      <!-- ingredient 사진 업로드 -->	 
      	 <div id="fileUpload2">
        
