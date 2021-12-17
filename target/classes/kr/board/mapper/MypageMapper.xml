@@ -15,6 +15,11 @@
         values(now(),#{member_id}, #{ingre_pic})
     </insert>
     
+    <!-- 나의 재료 선택? 플레이팅선택? -->
+    <select id="ingre_select" parameterType="String" resultType="kr.board.domain.Tbl_plating">
+    	select plating_pic from tbl_plating where cook_name = #{cook_name};
+    </select>   
+
     
     <!-- 나의 플레이팅 출력 -->
     <select id="platingView" parameterType="String" resultType="kr.board.domain.Tbl_plating">

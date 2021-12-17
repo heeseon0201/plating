@@ -112,7 +112,7 @@
   </style>
 </head>
 <body>
-<script src="main.85741bff.js"></script> 
+<script src="${cpath}/resources/js/main.85741bff.js"></script> 
 
 <!--메인헤더-->
 <div id="wrap">
@@ -162,6 +162,7 @@
 
 <!--검색창-->
 <div style="display: flex; justify-content: center;">
+<!-- 플레이팅 업로드 연동 -->
   <img src="${cpath}/resources/image/camera (1).svg" onclick="#" style="width: 50px; height: 50px; margin-right: 2%;">
   <input placeholder="검색" style="width: 900px; height: 50px; margin"/>
   <button style="width: 90px; height: 50px;">찾기</button>
@@ -267,19 +268,19 @@ transform: translateX(-50%);">
    </c:forEach>
       </div>
 
-      <!-- plating 사진 업로드 -->
+      <!-- plating 사진 업로드 --> 
       	<div id="fileUpload">
        
-	      <form action="/web/fileupload.file" method=post enctype="multipart/form-data">
-	      <input type="file" name="file" capture="environment" accept="image/*">
+	       <form action="/web/fileupload.file" method=post enctype="multipart/form-data">
+	      <input type="file" name="file">
 	      <input type="submit" value="upload">
 	      </form>
      
-     	 </div>  
+     	 </div> 
      <!-- ingredient 사진 업로드 -->	 
-     	 <div id="fileUpload">
+     	 <div id="fileUpload2">
        
-	      <form action="/web/fileupload.file" method=post enctype="multipart/form-data">
+	      <form action="/web/ingrefileupload.file" method=post enctype="multipart/form-data">
 	      <input type="file" name="file" capture="environment" accept="image/*">
 	      <input type="submit" value="ingre_upload">
 	      </form>
@@ -291,6 +292,7 @@ transform: translateX(-50%);">
         <div>
           <span class="fixed-btn">
             <p>
+            <!-- 재료사진 업로드 -->
               <a href="."><img src="${cpath}/resources/image/aside_icon_8.png"></a>
             </p>
           </span>
