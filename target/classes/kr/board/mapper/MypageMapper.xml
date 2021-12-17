@@ -8,6 +8,14 @@
         insert into tbl_plating(plating_reg_date, member_id, plating_pic)
         values(now(), #{member_id}, #{plating_pic})
     </insert>
+    
+    <!-- 나의 재료 업로드 -->
+    <insert id ="ingre_upload" parameterType="kr.board.domain.Tbl_ingredient">
+        insert into tbl_ingredient(ingre_reg_date, member_id,ingre_pic)
+        values(now(),#{member_id}, #{ingre_pic})
+    </insert>
+    
+    
     <!-- 나의 플레이팅 출력 -->
     <select id="platingView" parameterType="String" resultType="kr.board.domain.Tbl_plating">
         select * from tbl_plating where member_id = #{member_id}

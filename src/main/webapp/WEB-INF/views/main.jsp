@@ -120,7 +120,7 @@
         </figure>
    </c:forEach>
       </div>
-      
+      <!-- plating 사진 업로드 -->
       	<div id="fileUpload">
        
 	      <form action="/web/fileupload.file" method=post enctype="multipart/form-data">
