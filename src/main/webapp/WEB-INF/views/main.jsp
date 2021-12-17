@@ -162,6 +162,7 @@
 
 <!--검색창-->
 <div style="display: flex; justify-content: center;">
+<!-- 플레이팅 업로드 연동 -->
   <img src="${cpath}/resources/image/camera (1).svg" onclick="#" style="width: 50px; height: 50px; margin-right: 2%;">
   <input placeholder="검색" style="width: 900px; height: 50px; margin"/>
   <button style="width: 90px; height: 50px;">찾기</button>
@@ -291,6 +292,7 @@ transform: translateX(-50%);">
         <div>
           <span class="fixed-btn">
             <p>
+            <!-- 재료사진 업로드 -->
               <a href="."><img src="${cpath}/resources/image/aside_icon_8.png"></a>
             </p>
           </span>
