@@ -24,7 +24,7 @@
 
 
 
-  <title>마이페이지</title>  
+  <title>상세페이지</title>  
 
 <link href="${cpath}/resources/CSS/main.css" rel="stylesheet">
 
@@ -58,7 +58,19 @@ textarea{
 vertical-align: middle;
   width: 50vw;
   height: 40vw;
+}
+p.goods-intro {
+  margin-top: 10%;
+  font-family: "Noto Sans KR", "Helvetica Neue", "Apple SD Gothic Neo",
+    "맑은 고딕", "Malgun Gothic", "돋움", dotum, sans-serif;
+  font-size: 150%;
+  display: block;
+}
 
+.goods-text{
+	color: #ff6360;
+    font-weight: bold;
+}
 }
 
 </style>
@@ -93,9 +105,8 @@ vertical-align: middle;
         <div class="site-header hidden-xs">
             <a class="site-brand" href="메인바1.html" title="">
               <p class="material-icons-outlined">
-                <img src="메뉴바.png">
+                <img src="resources/image/메뉴바.png">
               </p> 
-              <img class="img-responsive site-logo" alt="" src="./assets/images/mashup-logo.svg">
               Main
             </a> 
         </div>
@@ -146,7 +157,7 @@ vertical-align: middle;
             <!--별점-->
             <div class="icons-react">
             <span onclick="likeOne()" style="margin-top: 10vh;">
-              <img id="heart" src="${cpath}/resources/image/heart.svg" style="width:3vw; height:3vh;"/>
+              <img id="heart" src="resources/image/heart.svg" style="width:3vw; height:3vh;"/>
               <span id="like_people" style="margin-top: 10vh;">1</span>
             </span>
               <div class="icons-left" style="float:right;">
@@ -168,7 +179,13 @@ vertical-align: middle;
           </article>
         </div>
     </div>
-
+<!-- 동영상보기 -->
+     <div class="button-site">
+        <button class="btn btn-light" onclick="goList()">동영상보기</button>
+       </div>
+    <div id="view" style="width: 50vw; height: 40vh; display: none; margin-bottom: 15vh;">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/8HEBjTzEvJE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
     <div class="section-container-spacer">
        <!--상품 타이틀-->
     <section class="goods_inner">
@@ -177,13 +194,6 @@ vertical-align: middle;
           함께 보면 <span class="goods-text"> 좋은 플레이팅 상품</span>이에요
         </p>
      </div>
-     <!-- 동영상보기 -->
-     <div class="button-site">
-        <button class="btn btn-light" onclick="goList()">동영상보기</button>
-       </div>
-    <div id="view" style="width: 50vw; height: 40vh; display: none; margin-bottom: 15vh;">
-        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/8HEBjTzEvJE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
      <!--상품 보여주기-->
      <div class="slideshow-container">
 	      <div class="mySlides">
@@ -210,8 +220,7 @@ vertical-align: middle;
         <span class="dot" onclick="currentSlide(2)"></span> 
         <span class="dot" onclick="currentSlide(3)"></span> 
       </div>
-      <img src='${cpath}/resources/emptyHeart.png'
-                  class='savePaletteRandom saveBtn tooltip-bottom' id='emptyHeart'></li>
+
       
       
       
@@ -259,12 +268,11 @@ vertical-align: middle;
         	}
         	//좋아요
         	function likeOne(){ 
-        		alert(document.getElementById("heart").src);
-        	  if(document.getElementById("heart").src == "img/heart.svg"){
-        	    document.getElementById("heart").src = "img/heart-fill.svg"
+        	  if(document.getElementById("heart").src == "http://localhost:8081/web/resources/image/heart.svg"){
+        	    document.getElementById("heart").src = "resources/image/heart-fill.svg"
         	    document.getElementById("like_people").innerText= Number(document.getElementById("like_people").innerText)+1;
         	  }else{
-        	    document.getElementById("heart").src = "img/heart.svg"
+        	    document.getElementById("heart").src = "resources/image/heart.svg"
         	    document.getElementById("like_people").innerText= Number(document.getElementById("like_people").innerText)-1;
         	  }
         	};
