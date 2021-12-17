@@ -40,11 +40,14 @@ public class BasicController {
 	MemberMapper mapper;
 
 	// 회원가입 페이지 열기
-	@GetMapping("/join.do")
+	@RequestMapping("/join.do")
 	public String join() {
 		return "join";
 	}
-
+	@RequestMapping("/joina.do")
+	public String joina() {
+		return "joina";
+	}
 	// 로그인
 	@RequestMapping("/login.do")
 	public String login(User vo, HttpSession session) {

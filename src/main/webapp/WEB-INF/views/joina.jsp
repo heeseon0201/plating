@@ -7,32 +7,32 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
 <link rel="stylesheet" href="${cpath}/resources/CSS/join.css" />
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
-    
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+<script src="${cpath}/resources/js/main.85741bff.js"></script> 
 </head>     
 <body>
-    <script src="main.85741bff.js"></script>     
-    <button class="button" onclick="location.href='${cpath}/joina.do'" method="get">가입하기</button>
-<dialog>
+
   <div class="dialog__inner">
     <button class="button2 button-close close" >╳</button>
     <div class="dialog__content">
       <h1>환영합니다</h1>
       <h4>당신의 플레이팅을 뽐내보세요!</h4>
-      <form id="Join" action="${cpath}/join.do" method="post">
-        <input  class="form" name="member_id" placeholder="Id"/>
+      <form>
+        <input  class="form" name="id" placeholder="아이디"/>
         <br><br>
-        <input  class="form" name="member_pwd" placeholder="Password"/>
+        <input  class="form" name="pw" placeholder="비밀번호"/>
         <br><br>
-        <input  autocomplete="nickname" class="form" name="member_nickname" placeholder="Nick"/>
+        <input  autocomplete="nickname" class="form" name="nickname" placeholder="닉네임"/>
         <br><br>
-        <input  autocomplete="name" class="form" name="member_name" placeholder="Name"/>
+        <input  autocomplete="name" class="form" name="name" placeholder="이름"/>
         <br><br>
-        <input  autocomplete="email" class="form" name="member_email" placeholder="Email"/>
+        <input  autocomplete="email" class="form" name="email" placeholder="이메일"/>
         <br><br>
-        <input  autocomplete="tel" class="form" name="member_phone" placeholder="Phone"/>
+        <input  autocomplete="tel" class="form" name="tel" placeholder="연락처"/>
 
       
     </form>
@@ -45,7 +45,8 @@
       </footer> 
     </div>  
   </div>
-</dialog>
-<script src="masonry-docs\index.js"></script>
+
+
+
 </body>
 </html>
