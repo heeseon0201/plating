@@ -41,6 +41,12 @@ textarea{
 .userID main-id point-span{
   font-size: 50px;
 }
+.saveBtn {
+   width: 15px;
+   height: 15px;
+   margin: 3%;
+   cursor: pointer;
+}
 
 </style>
 <!--<link href="마이페이지(수정완료)\style\detailpage.css" rel="stylesheet">-->
@@ -226,6 +232,14 @@ textarea{
         <span class="dot" onclick="currentSlide(2)"></span> 
         <span class="dot" onclick="currentSlide(3)"></span> 
       </div>
+      <img src='${cpath}/resources/emptyHeart.png'
+                  class='savePaletteRandom saveBtn tooltip-bottom' id='emptyHeart'></li>
+      
+      
+      
+      
+      
+      
     <section>
       <script>
         var slideIndex = 1;
