@@ -267,6 +267,25 @@ transform: translateX(-50%);">
    </c:forEach>
       </div>
 
+      <!-- plating 사진 업로드 -->
+      	<div id="fileUpload">
+       
+	      <form action="/web/fileupload.file" method=post enctype="multipart/form-data">
+	      <input type="file" name="file" capture="environment" accept="image/*">
+	      <input type="submit" value="upload">
+	      </form>
+     
+     	 </div>  
+     <!-- ingredient 사진 업로드 -->	 
+     	 <div id="fileUpload">
+       
+	      <form action="/web/fileupload.file" method=post enctype="multipart/form-data">
+	      <input type="file" name="file" capture="environment" accept="image/*">
+	      <input type="submit" value="ingre_upload">
+	      </form>
+     
+     	 </div>  
+
     </main>
       <footer>
         <div>
