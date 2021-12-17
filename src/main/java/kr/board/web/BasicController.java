@@ -74,6 +74,9 @@ public class BasicController {
 		session.setAttribute("userVO", vo);
 		return "redirect:/";
 	}
+	
+	
+	
 
 	// 메인 페이지 열기
 	@RequestMapping("/main.do")
