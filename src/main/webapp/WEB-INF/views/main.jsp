@@ -286,7 +286,7 @@ transform: translateX(-50%);">
       <!-- plating 사진 업로드 --> 
       	<div id="fileUpload">
        
-	       <form action="/web/fileupload.file" method=post enctype="multipart/form-data">
+	       <form action="http://localhost:5000/predict" method=post enctype="multipart/form-data">
 	      <input type="file" name="file">
 	      <input type="submit" value="upload">
 	      </form>
