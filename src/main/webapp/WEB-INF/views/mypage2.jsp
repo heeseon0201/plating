@@ -9,6 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+    <link rel="stylesheet"  href="resources/CSS/main.css">
 </head>
 <body>
 <!-- Add your content of header -->
@@ -34,15 +35,13 @@
       <a href="./index.html" class="navbar-brand">Main</a>
     </div>
   
-  
     <nav class="sidebar">
       <div class="navbar-collapse" id="navbar-collapse">
         <div class="site-header hidden-xs">
             <a class="site-brand" href="메인바1.html" title="">
               <p class="material-icons-outlined">
-                <img src="images\메뉴바.png">
+                <img src="resources/image/메뉴바.png">
               </p> 
-              <img class="img-responsive site-logo" alt="" src="./assets/images/mashup-logo.svg">
               Main
             </a> 
         </div>
@@ -76,20 +75,20 @@
       <br>  
   </div>
 </div>
+<br><br><br>
   <!--재료 타이틀-->
   <section>
     <div class="goods-title">
-      <p class="goods-intro">
-        <span class="goods-text">INGREDIENT</span>
+    <br>
+      <p class="goods-intro">INGREDIENT
       </p>
    </div>
 
-   <!--재료 보여주기-->
    <div class="slideshow-container">
     <c:forEach var="vo" items="${ingredient_list}">
 	    <div class="mySlidesfirst">
 	      <div class="numbertext">1 / ${fn:length(ingredient_list)} </div>
-	        <img src="<spring:url value='/image/${vo.ingre_pic}'/>" style="width: 80vw; height : 25vh;" class="listed-img">
+	        <img src="<spring:url value='/image/${vo.ingre_pic}'/>" style="width: 50vw; height : 25vh;" class="listed-img">
 	    </div>
     </c:forEach>
     
@@ -123,7 +122,7 @@
      <a href="${cpath}/detail.do?plating_seq=${vo.plating_seq}">
 	    <div class="second">
 	      <div class="numbertext">1 / ${fn:length(my_plating_list)}  </div>
-	        <img src="<spring:url value='/image/${vo.plating_pic}'/>" style="width: 80vw; height : 25vh;" class="listed-img">
+	        <img src="<spring:url value='/image/${vo.plating_pic}'/>" style="width: 50vw; height : 25vh;" class="listed-img">
 	    </div>
     </c:forEach>
     </a>
@@ -138,7 +137,7 @@
       </div>
       <br>
       
-      <div style="text-align:center">
+      <div>
         <span class="dot_second" onclick="currentSlidesecond(1)"></span> 
         <span class="dot_second" onclick="currentSlidesecond(2)"></span> 
         <span class="dot_second" onclick="currentSlidesecond(3)"></span> 
@@ -233,7 +232,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   ga('send', 'pageview');
 </script>
 
---> <script type="text/javascript" src="main.85741bff.js"></script>
+--> <script type="text/javascript" src="resources/js/main.85741bff.js"></script>
 
 
 
