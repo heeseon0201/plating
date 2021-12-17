@@ -110,6 +110,21 @@
 }
 
   </style>
+  <script>
+  window.onload = function() {
+	  document
+	  .getElementById("cameraFileInput")
+	  .addEventListener("change", function () {
+	document
+	  .getElementById("pictureFromCamera")
+	  .setAttribute("src", window.URL.createObjectURL(this.files[0]));
+	document.getElementById('ingredient_upload').submit();
+	});
+  
+  
+  };
+ 
+  </script>
 </head>
 <body>
 <script src="${cpath}/resources/js/main.85741bff.js"></script> 
@@ -280,11 +295,11 @@ transform: translateX(-50%);">
      <!-- ingredient 사진 업로드 -->	 
      	 <div id="fileUpload2">
        
-	      <form action="/web/ingrefileupload.file" method=post enctype="multipart/form-data">
-	      <input type="file" name="file" capture="environment" accept="image/*">
+	      <!-- <form id="ingredient_upload" action="/web/ingrefileupload.file" method=post enctype="multipart/form-data">
+	      <input type="file" name="file" capture="environment" accept="image/*" required>
 	      <input type="submit" value="ingre_upload">
-	      </form>
-     
+	      </form> -->
+     	<img id="pictureFromCamera"></img>
      	 </div>  
 
     </main>
@@ -292,9 +307,14 @@ transform: translateX(-50%);">
         <div>
           <span class="fixed-btn">
             <p>
+            <form id="ingredient_upload" action="/web/ingrefileupload.file" method=post enctype="multipart/form-data">
             <!-- 재료사진 업로드 -->
-              <a href="."><img src="${cpath}/resources/image/aside_icon_8.png"></a>
+            <label for="cameraFileInput">
+              <a onclick=""><img src="${cpath}/resources/image/aside_icon_8.png"></a>
+              <input id="cameraFileInput" type="file" name="file" capture="environment" accept="image/*" required style="display:none">
+              </label>
             </p>
+            </form>
           </span>
           <!--<span class="fixed-btn"><p>클릭!</p></span>--> 
         </div>
