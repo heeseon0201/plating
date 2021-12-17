@@ -112,7 +112,7 @@
   </style>
 </head>
 <body>
-<script src="main.85741bff.js"></script> 
+<script src="${cpath}/resources/js/main.85741bff.js"></script> 
 
 <!--메인헤더-->
 <div id="wrap">
