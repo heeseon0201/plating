@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<c:set var="cpath" value="${pageContext.request.contextPath}"/> 
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -81,25 +85,18 @@
 
    <!--재료 보여주기-->
    <div class="slideshow-container">
-
-    <div class="mySlidesfirst">
-      <div class="numbertext">1 / 3</div>
-        <img src="images\img-04.jpg" style="width: 80vw; height : 25vh;" class="listed-img">
-    </div>
+    <c:forEach var="vo" items="${ingredient_list}">
+	    <div class="mySlidesfirst">
+	      <div class="numbertext">1 / ${fn:length(ingredient_list)} </div>
+	        <img src="<spring:url value='/image/${vo.ingre_pic}'/>" style="width: 80vw; height : 25vh;" class="listed-img">
+	    </div>
+    </c:forEach>
     
-    <div class="mySlidesfirst">
-      <div class="numbertext">2 / 3</div>
-      <img src="images\img-12.jpg" style="width: 80vw; height : 25vh;" class="listed-img">
-    </div>
-    
-    <div class="mySlidesfirst">
-      <div class="numbertext">3 / 3</div>
-      <img src="images\img-041.jpg" style="width: 80vw; height : 25vh;" class="listed-img">
-    </div>
     <div>
       <a class="prev" onclick="plusSlidesfirst(-1)">&#10094;</a>
       <a class="next" onclick="plusSlidesfirst(1)">&#10095;</a>
     </div>
+    
     </div>
     <br>
     
@@ -121,21 +118,16 @@
      </div>
      <!--플레이팅 보여주기-->
      <div class="slideshow-container">
-
-      <div class="second">
-        <div class="numbertext">1 / 3</div>
-          <img src="images\img-04.jpg" style="width: 80vw; height : 25vh;" class="listed-img">
-      </div>
+     <c:forEach var="vo" items="${my_plating_list}">
+     <a href="${cpath}/detail.do?plating_seq=${vo.plating_seq}">
+	    <div class="second">
+	      <div class="numbertext">1 / ${fn:length(my_plating_list)}  </div>
+	        <img src="<spring:url value='/image/${vo.plating_pic}'/>" style="width: 80vw; height : 25vh;" class="listed-img">
+	    </div>
+    </c:forEach>
+    </a>
+     
       
-      <div class="second">
-        <div class="numbertext">2 / 3</div>
-        <img src="images\img-12.jpg" style="width: 80vw; height : 25vh;" class="listed-img">
-      </div>
-      
-      <div class="second">
-        <div class="numbertext">3 / 3</div>
-        <img src="images\img-041.jpg" style="width: 80vw; height : 25vh;" class="listed-img">
-      </div>
       <div >
         <a class="prev" onclick="plusSlidessecond(-1)">&#10094;</a>
         <a class="next" onclick="plusSlidessecond(1)">&#10095;</a>
