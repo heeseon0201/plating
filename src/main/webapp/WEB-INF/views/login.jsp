@@ -10,6 +10,18 @@
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
+<style>
+.login-form{
+	border:solid;
+	line-height:30px;
+}
+.main-div{
+	border:solid;
+	line-height:30px;
+	border-radius:30px;
+}
+
+</style>
 <body id="LoginForm">
 <form name="homeForm" method="post" action="/login.do"></form>
 	<c:if test="${userVO == null}">

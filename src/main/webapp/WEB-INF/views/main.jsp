@@ -184,12 +184,15 @@
 left: 55%;
 transform: translateX(-50%);">
   <span>
-  <button class="filter-button filter-active" style="width: 100px;  " data-translate-value="0" >
+  <button class="filter-button filter-active" onclick="location.href='${cpath}/login.do'" style="width: 100px;  " data-translate-value="0" >
     로그인
   </button>
+  .
+  00
+  
 </span>
 <span></span>
-  <button class="filter-button" style="width: 100px; " data-translate-value="100%">
+  <button class="filter-button" onclick="location.href='${cpath}/join.do'" style="width: 100px; " data-translate-value="100%">
     회원가입
   </button>
 </span>
