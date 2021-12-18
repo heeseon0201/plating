@@ -29,14 +29,9 @@
     <select id="ingreView" parameterType="String" resultType="kr.board.domain.Tbl_ingredient">
         select * from tbl_ingredient where member_id = #{member_id}
     </select>
-    
     <!-- 사진 별점 출력 -->
     <select id="ratingView" parameterType="int" resultType="int">
-        SELECT t3.my_pic_point
-		FROM tbl_plating t1 
-    		INNER JOIN tbl_member t2 ON t1.member_id = t2.member_id
-    		INNER JOIN tbl_my_rating t3 ON t1.plating_seq = t3.plating_seq
-		WHERE t1.plating_seq = #{plating_seq};
+        select pic_point from tbl_plating where plating_seq = #{plating_seq}
     </select>
     <!-- 플레이팅 상세페이지 출력 -->
     <select id="plating_detail" parameterType="int" resultType="kr.board.domain.Tbl_plating">
@@ -52,10 +47,8 @@
     
     <!-- 메인페이지 열기 -->
     <select id="main" resultType="kr.board.domain.Tbl_plating">
-        select A.plating_pic
-		from (select plating_pic, B.plating_seq from tbl_plating A left join tbl_my_rating B on A.plating_seq = B.plating_seq) A INNER JOIN
-			(select A.plating_seq, my_pic_point from tbl_my_rating B left join tbl_plating A on A.plating_seq = B.plating_seq) B
-		ON A.plating_seq = B.plating_seq
-		ORDER BY B.my_pic_point desc
+        select plating_pic
+		from tbl_plating
+		ORDER BY pic_point desc
     </select>
 </mapper>

@@ -19,4 +19,5 @@ public class Tbl_plating {
 	private int view_count; //조회수
 	private String plating_pic; //플레이팅 사진
 	private String cook_name; //요리명
+	private int pic_point;
 }

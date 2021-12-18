@@ -173,9 +173,7 @@ p.goods-intro {
               ${platingVO.plating_reg_date}<br /><br>
             </div>
             
-            <textarea style="resize: none;">
-				${platingVO.plating_content}
-            </textarea>
+            <textarea style="resize: none;">${platingVO.plating_content}</textarea>
           </article>
         </div>
     </div>
@@ -197,15 +195,15 @@ p.goods-intro {
      <!--상품 보여주기-->
      <div class="slideshow-container">
 	      <div class="mySlides">
-	        <div class="numbertext">1 / 1</div>
+	        <div class="numbertext">1 / 3</div>
 	          <img src="<spring:url value='/image/${goods_picture.goods_pic1}'/>" style="width: 50vw; height : 25vh;" />
 	      </div>
 	      <div class="mySlides">
-	        <div class="numbertext">1 / 2</div>
+	        <div class="numbertext">2 / 3</div>
 	          <img src="<spring:url value='/image/${goods_picture.goods_pic2}'/>" style="width: 50vw; height : 25vh;" />
 	      </div>
 	      <div class="mySlides">
-	        <div class="numbertext">1 / 3</div>
+	        <div class="numbertext">3 / 3</div>
 	          <img src="<spring:url value='/image/${goods_picture.goods_pic3}'/>" style="width: 50vw; height : 25vh;" />
 	      </div>
       

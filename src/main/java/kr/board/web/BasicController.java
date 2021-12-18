@@ -68,16 +68,14 @@ public class BasicController {
 	}
 
 	// 실제 회원가입
-	@PostMapping("/join.do")
+	@RequestMapping("/register.do")
 	public String register(User vo, HttpSession session) {
 		mapper.register(vo);
 		session.setAttribute("userVO", vo);
-		return "redirect:/";
+		return "redirect:/main.do";
 	}
 	
 	
-	
-
 	// 메인 페이지 열기
 	@RequestMapping("/main.do")
 	public String main(HttpSession session) {
