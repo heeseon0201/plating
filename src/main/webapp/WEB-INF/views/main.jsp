@@ -306,7 +306,7 @@ transform: translateX(-50%);">
         <div>
           <span class="fixed-btn">
             <p>
-            <form id="ingredient_upload" action="/web/ingrefileupload.file" method=post enctype="multipart/form-data">
+            <form id="ingredient_upload" action="/web/ingredient_upload.file" method=post enctype="multipart/form-data">
             <!-- 재료사진 업로드 -->
             <label for="cameraFileInput">
               <a onclick=""><img src="${cpath}/resources/image/aside_icon_8.png"></a>
