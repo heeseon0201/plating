@@ -124,12 +124,12 @@
   </script>
 </head>
 <body>
-<script src="${cpath}/resources/js/main.85741bff.js"></script> 
+<script src="resources/js/main.85741bff.js"></script> 
 
 <!--메인헤더-->
 <div id="wrap">
   <header id="main_header">
-    <img src="${cpath}/resources/image/2.jpg">
+    <img src="resources/image/2.jpg">
   </header>
 </div>
 
@@ -154,7 +154,7 @@
       <div class="site-header hidden-xs">
           <a class="site-brand" href="메인바1.html" title="">
             <p class="material-icons-outlined">
-              <img src="${cpath}/resources/image/메뉴바.png">
+              <img src="resources/image/메뉴바.png">
             </p> 
             <!--<img class="img-responsive site-logo" alt="" src="${cpath}/resources/image/mashup-logo.svg">-->
             Main
@@ -165,7 +165,7 @@
         <li><a href="./about.html" title="">About</a></li>
         <li><a href="./services.html" title="">Services</a></li>
         <li><a href="./components.html" title="">Components</a></li>
-        <li><a href="./components.html" title="">My Plating</a></li>
+        <li><a href="${cpath}/mypage.do" title="">My Plating</a></li>
       </ul>
     </div> 
   </nav>
@@ -280,7 +280,8 @@ transform: translateX(-50%);">
     <div id="columns">
 	    <c:forEach var="vo" items="${plating_list}">
 	        <figure>
-	         	<img src="<spring:url value='/image/${vo.plating_pic}'/>"/>      
+	        <a href="${cpath}/detail.do?plating_seq=${vo.plating_seq}"><img src="<spring:url value='/image/${vo.plating_pic}'/>"/>   </a>
+	         	   
 	        </figure>
 	   	</c:forEach>
     </div>
@@ -308,7 +309,7 @@ transform: translateX(-50%);">
         <div>
           <span class="fixed-btn">
             <p>
-            <form id="ingredient_upload" action="/web/ingrefileupload.file" method=post enctype="multipart/form-data">
+            <form id="ingredient_upload" action="/web/ingredient_upload.file" method=post enctype="multipart/form-data">
             <!-- 재료사진 업로드 -->
             <label for="cameraFileInput">
               <a onclick=""><img src="${cpath}/resources/image/aside_icon_8.png"></a>

@@ -48,8 +48,8 @@
 	<div class="main-div">
 		<div class="panel">
 			<h1>${userVO.member_id}를 환영합니다.</h1>
-			<a href="logout.do">로그아웃</a>
-			<a href="main.jsp"><button>메인으로</button></a>
+			<a href="${cpath}/logout.do">로그아웃</a>
+			<a href="${cpath}/main.do"><button>메인으로</button></a>
 		</div>
 	</div>
 	</c:if>
