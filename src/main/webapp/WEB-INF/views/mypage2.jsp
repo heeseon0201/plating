@@ -46,11 +46,11 @@
             </a> 
         </div>
         <ul class="nav">
-          <li><a href="./index.html" title="">Home</a></li>
+          <li><a href="main.do" title="">Home</a></li>
           <li><a href="./about.html" title="">About</a></li>
           <li><a href="./services.html" title="">Services</a></li>
           <li><a href="./components.html" title="">Components</a></li>
-          <li><a href="./components.html" title="">My Plating</a></li>
+          <li><a href="mypage.do" title="">My Plating</a></li>
         </ul>
       </div> 
     </nav>
