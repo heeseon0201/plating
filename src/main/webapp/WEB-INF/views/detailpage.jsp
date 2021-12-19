@@ -63,7 +63,7 @@ p.goods-intro {
   margin-top: 10%;
   font-family: "Noto Sans KR", "Helvetica Neue", "Apple SD Gothic Neo",
     "맑은 고딕", "Malgun Gothic", "돋움", dotum, sans-serif;
-  font-size: 150%;
+  font-size: 120%;
   display: block;
 }
 
@@ -140,7 +140,7 @@ p.goods-intro {
         <br>
         <div class="feeds">
           <!--사진의 상세부분-->
-          <article style="width: 50vw; height:70vw;">
+          <article style="width: 50vw; height:70vw; display:block;">
             <!--닉네임 부분-->
             <header>
               <div class="profile-of-article">
@@ -169,7 +169,7 @@ p.goods-intro {
               </div>
             </div>
             <!-- 플레이팅의 설명 부분 -->
-            <div class="description">
+            <div class="description" style="display:block;">
               ${platingVO.plating_reg_date}<br /><br>
             </div>
             
@@ -178,13 +178,13 @@ p.goods-intro {
         </div>
     </div>
 <!-- 동영상보기 -->
-     <div class="button-site">
+     <div class="button-site" style="display:block;">
         <button class="btn btn-light" onclick="goList()">동영상보기</button>
        </div>
     <div id="view" style="width: 50vw; height: 40vh; display: none; margin-bottom: 15vh;">
         <iframe width="100%" height="100%" src="https://www.youtube.com/embed/8HEBjTzEvJE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
-    <div class="section-container-spacer">
+    <div class="section-container-spacer" style="display:block;">
        <!--상품 타이틀-->
     <section class="goods_inner">
       <div class="goods-title">
