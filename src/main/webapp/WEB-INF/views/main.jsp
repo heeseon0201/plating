@@ -168,17 +168,16 @@
 <header class="panel-header">
   <nav class="sidebar">
     <div class="navbar-collapse" id="navbar-collapse">
-      <div class="site-header hidden-xs">
-          
+      <div class="site-header hidden-xs">          
             <p class="material-icons-outlined">
-              <button class='btn btn-primary btn-sm' onclick='writeFn()'><img src="resources/image/메뉴바.png"></button>
-             <a href="main.do">Main</a>
+              <button class='btn btn-primary btn-sm' onclick='writeFn()' style="background-color:white;  border-color:white;"><img src="resources/image/메뉴바.png"></button>
+             
             <!--<img class="img-responsive site-logo" alt="" src="${cpath}/resources/image/mashup-logo.svg">-->
             
            
       </div>
       <ul class="nav">
-        <li><a href="./index.html" title="">Home</a></li>
+        <li><a href="${cpath}/main.do" title="">Home</a></li>
         <li><a href="./about.html" title="">About</a></li>
         <li><a href="./services.html" title="">Services</a></li>
         <li><a href="./components.html" title="">Components</a></li>
@@ -197,16 +196,18 @@
   <button style="width: 90px; height: 50px;">찾기</button>
 </div>
 <br>
+<!--
 <div style="position: absolute;
 left: 55%;
 transform: translateX(-50%);">
   <span>
-  <button class="filter-button filter-active" style="width: 100px;  " data-translate-value="0" >
+   <button class="filter-button filter-active" onclick="location.href='${cpath}/login.do'" style="width: 100px;  " data-translate-value="0" >
     로그인
   </button>
+  
 </span>
 <span></span>
-  <button class="filter-button" style="width: 100px; " data-translate-value="100%">
+  <button class="filter-button" onclick="location.href='${cpath}/join.do'" style="width: 100px; " data-translate-value="100%">
     회원가입
   </button>
 </span>
@@ -216,6 +217,7 @@ transform: translateX(-50%);">
   </button>
 </span>
 </div>
+ -->
 <br><br>
 
 <div class="filter-slider" aria-hidden="true">
@@ -292,12 +294,20 @@ transform: translateX(-50%);">
 <!--화면방식-->
   </form>
     <div id="columns">
+    <c:if test="${cookName }">
 	    <c:forEach var="vo" items="${plating_list}">
 	        <figure>
-	        <a href="${cpath}/detail.do?plating_seq=${vo.plating_seq}"><img src="<spring:url value='/image/${vo.plating_pic}'/>"/>   </a>
-	         	   
+	        <a href="${cpath}/detail.do?plating_seq=${vo.plating_seq}"><img src="<spring:url value='/image/${vo.plating_pic}'/>"/>   </a>	         	   
 	        </figure>
 	   	</c:forEach>
+	</c:if>
+	<c:if test="">
+	    <c:forEach var="vo" items="${plating_list}">
+	        <figure>
+	        <a href="${cpath}/detail.do?plating_seq=${vo.plating_seq}"><img src="<spring:url value='/image/${vo.plating_pic}'/>"/>   </a>	         	   
+	        </figure>
+	   	</c:forEach>
+	</c:if>
     </div>
     
 <!-- 
@@ -318,7 +328,7 @@ transform: translateX(-50%);">
      	<img id="pictureFromCamera"></img>
      	 </div>   -->
  
-    </main>
+    </main>		
       <footer>
         <div>
           <span class="fixed-btn">

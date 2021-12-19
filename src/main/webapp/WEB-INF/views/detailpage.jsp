@@ -78,7 +78,7 @@ p.goods-intro {
 </head>
 <body>
 <!-- Add your content of header -->
-<header class="">
+<!-- <header class="">
   <div class="navbar navbar-default visible-xs">
     <button type="button" class="navbar-toggle collapsed">
       <span class="sr-only">Toggle navigation</span>
@@ -87,7 +87,7 @@ p.goods-intro {
       <span class="icon-bar"></span>
     </button>
     <a href="./index.html" class="navbar-brand">Mashup Template</a>
-  </div>
+  </div> -->
 
   <header class="">
     <div class="navbar navbar-default visible-xs">
@@ -173,7 +173,7 @@ p.goods-intro {
               ${platingVO.plating_reg_date}<br /><br>
             </div>
             
-            <textarea style="resize: none;">${platingVO.plating_content}</textarea>
+            <textarea style="resize: none; border-radius:30px">${platingVO.plating_content}</textarea>
           </article>
         </div>
     </div>

@@ -74,12 +74,13 @@
         <div style="width:15vw; height: 15vh;"></div>
       <span class="fixed-btn">
             <p>
-            <form id="ingredient_upload" action="/web/ingrefileupload.file" method=post enctype="multipart/form-data">
+            <form id="" action="http://localhost:5000/predict2" method=post enctype="multipart/form-data">
             <!-- 재료사진 업로드 -->
             
             <label for="cameraFileInput">
               <a onclick=""><img src="${cpath}/resources/image/camera (1).svg" onclick="#" style="width: 80px; height: 80px; margin-right: 2%;"></a>
               <input id="cameraFileInput" type="file" name="file" capture="environment" accept="image/*" required style="display:none">
+               <input type="submit" value="upload">
               </label>
             </p>
             </form>
