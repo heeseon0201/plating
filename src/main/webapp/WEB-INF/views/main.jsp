@@ -294,13 +294,13 @@ transform: translateX(-50%);">
 <!--화면방식-->
   </form>
     <div id="columns">
-    <c:if test="${cookName }">
+    
 	    <c:forEach var="vo" items="${plating_list}">
 	        <figure>
 	        <a href="${cpath}/detail.do?plating_seq=${vo.plating_seq}"><img src="<spring:url value='/image/${vo.plating_pic}'/>"/>   </a>	         	   
 	        </figure>
 	   	</c:forEach>
-	</c:if>
+	
 	<c:if test="">
 	    <c:forEach var="vo" items="${plating_list}">
 	        <figure>
