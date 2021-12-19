@@ -46,11 +46,11 @@
             </a> 
         </div>
         <ul class="nav">
-          <li><a href="main.do" title="">Home</a></li>
+          <li><a href="./index.html" title="">Home</a></li>
           <li><a href="./about.html" title="">About</a></li>
           <li><a href="./services.html" title="">Services</a></li>
           <li><a href="./components.html" title="">Components</a></li>
-          <li><a href="mypage.do" title="">My Plating</a></li>
+          <li><a href="./components.html" title="">My Plating</a></li>
         </ul>
       </div> 
     </nav>
@@ -70,9 +70,25 @@
 <div class="row">
   <div class="col-xs-12 col-md-8">
 
-    <div class="section-container-spacer">
-        <h1>마이페이지</h1>
-      <br>  
+    <div class="section-container-spacer" style="display: flex;">
+        <div style="width:15vw; height: 15vh;"></div>
+      <span class="fixed-btn">
+            <p>
+            <form id="ingredient_upload" action="/web/ingrefileupload.file" method=post enctype="multipart/form-data">
+            <!-- 재료사진 업로드 -->
+            
+            <label for="cameraFileInput">
+              <a onclick=""><img src="${cpath}/resources/image/camera (1).svg" onclick="#" style="width: 80px; height: 80px; margin-right: 2%;"></a>
+              <input id="cameraFileInput" type="file" name="file" capture="environment" accept="image/*" required style="display:none">
+              </label>
+            </p>
+            </form>
+          </span>
+          
+      <h1>마이페이지</h1>
+      
+        
+      
   </div>
 </div>
 <br><br><br>
@@ -80,22 +96,22 @@
   <section>
     <div class="goods-title">
     <br>
-      <p class="goods-intro">INGREDIENT
-      </p>
+      <!-- <p class="goods-intro">INGREDIENT
+      </p>-->
    </div>
 
    <div class="slideshow-container">
     <c:forEach var="vo" items="${ingredient_list}">
-	    <div class="mySlidesfirst">
+	    <!-- <div class="mySlidesfirst">
 	      <div class="numbertext">1 / ${fn:length(ingredient_list)} </div>
 	        <img src="<spring:url value='/image/${vo.ingre_pic}'/>" style="width: 50vw; height : 25vh;" class="listed-img">
-	    </div>
+	    </div> -->
     </c:forEach>
     
-    <div>
+    <!-- <div>
       <a class="prev" onclick="plusSlidesfirst(-1)">&#10094;</a>
       <a class="next" onclick="plusSlidesfirst(1)">&#10095;</a>
-    </div>
+    </div>-->
     
     </div>
     <br>
@@ -121,10 +137,25 @@
      <c:forEach var="vo" items="${my_plating_list}">
      <a href="${cpath}/detail.do?plating_seq=${vo.plating_seq}">
 	    <div class="second">
-	      <div class="numbertext">1 / ${fn:length(my_plating_list)}  </div>
+	       <div class="numbertext"><!-- 1 / ${fn:length(my_plating_list)}-->  </div>
 	        <img src="<spring:url value='/image/${vo.plating_pic}'/>" style="width: 50vw; height : 25vh;" class="listed-img">
+	        </div>
+	        </a>
+	        <div class="icons-react">
+            <span onclick="likeOne()" style="margin-top: 10vh;">
+              <img id="heart" src="resources/image/heart.svg" style="width:3vw; height:3vh;"/>
+              <span id="like_people" style="margin-top: 10vh;">3</span>
+            </span>
+	        <div class="icons-left" style="display: block; margin-left:500px; ">
+              <c:forEach begin="1" end="${vo.pic_point}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="3vw" height="3vh" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                </svg>
+               </c:forEach>
+              </div>
+		</c:forEach>
+	        
 	    </div>
-    </c:forEach>
     </a>
      
       
