@@ -134,7 +134,7 @@
 		    data: formData,
 		    success: function(rtn){
 		      const message = rtn.data.values[0];
-		      console.log("message: ", message);
+		      console.log("message: ", message)
 		      $("#resultUploadPath").text(message.uploadFilePath)
 		    },
 		    err: function(err){
@@ -297,14 +297,12 @@ transform: translateX(-50%);">
 <!--화면방식-->
   </form>
     <div id="columns">
-    <c:if test="">
 	    <c:forEach var="vo" items="${plating_list}">
 	        <figure>
 	        <a href="${cpath}/detail.do?plating_seq=${vo.plating_seq}"><img src="<spring:url value='/image/${vo.plating_pic}'/>"/>   </a>
-	    </c:forEach>
-	</c:if> 
+	         	   
 	        </figure>
-	   	
+	   	</c:forEach>
     </div>
     
 <!-- 
