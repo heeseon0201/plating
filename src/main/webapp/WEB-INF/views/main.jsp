@@ -134,7 +134,7 @@
 		    data: formData,
 		    success: function(rtn){
 		      const message = rtn.data.values[0];
-		      console.log("message: ", message)
+		      console.log("message: ", message);
 		      $("#resultUploadPath").text(message.uploadFilePath)
 		    },
 		    err: function(err){
