@@ -22,7 +22,7 @@ public class MypageController {
 
 	@Autowired
 	MypageMapper mapper;
-	
+
 
 	@RequestMapping("/upload.do")
 	public String Upload(Tbl_plating vo, HttpSession session) { 
