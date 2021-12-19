@@ -116,11 +116,38 @@
 	  .getElementById("pictureFromCamera")
 	  .setAttribute("src", window.URL.createObjectURL(this.files[0]));
 	document.getElementById('ingredient_upload').submit();
-	});
-  
-  
+	});  
   };
- 
+  function cameraUpload(){
+	  const imageInput = $("#cameraFileInput")[0];
+	  // 파일을 여러개 선택할 수 있으므로 files 라는 객체에 담긴다.
+	  console.log("imageInput: ", imageInput.files)
+	  
+	  const formData = new FormData();
+	  formData.append("image", imageInput.files[0]);
+	  
+	  $.ajax({
+		    type:"POST",
+		    url: 'http://localhost:5000/predict',
+		    processData: false,
+		    contentType: false,
+		    data: formData,
+		    success: function(rtn){
+		      const message = rtn.data.values[0];
+		      console.log("message: ", message);
+		      $("#resultUploadPath").text(message.uploadFilePath)
+		    },
+		    err: function(err){
+		      console.log("err:", err)
+		    }
+		  })
+		}
+  function menuBar(){
+  	$(".panel-header").slideUp();
+  	//$(".panel-body").css("display", "none");
+  	$(".nav").css("display", "block");
+  }
+  
   </script>
 </head>
 <body>
@@ -138,27 +165,17 @@
 
 
 <!--사이드바*버튼(오른쪽)-->
-<header class="">
-  <div class="navbar navbar-default visible-xs">
-    <button type="button" class="navbar-toggle collapsed">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a href="./index.html" class="navbar-brand">Main</a>
-  </div>
-
+<header class="panel-header">
   <nav class="sidebar">
     <div class="navbar-collapse" id="navbar-collapse">
       <div class="site-header hidden-xs">
-          <a class="site-brand" href="메인바1.html" title="">
+          
             <p class="material-icons-outlined">
-              <img src="resources/image/메뉴바.png">
-            </p> 
+              <button class='btn btn-primary btn-sm' onclick='writeFn()'><img src="resources/image/메뉴바.png"></button>
+             <a href="main.do">Main</a>
             <!--<img class="img-responsive site-logo" alt="" src="${cpath}/resources/image/mashup-logo.svg">-->
-            Main
-          </a> 
+            
+           
       </div>
       <ul class="nav">
         <li><a href="./index.html" title="">Home</a></li>
@@ -283,37 +300,39 @@ transform: translateX(-50%);">
 	   	</c:forEach>
     </div>
     
-
-      <!-- plating 사진 업로드 --> 
+<!-- 
+      plating 사진 업로드 
       	<div id="fileUpload">       
 	       <form action="http://localhost:5000/predict" method=post enctype="multipart/form-data">
 		      <input type="file" name="file">
 		      <input type="submit" value="upload">
 	       </form>     
      	</div> 
-     <!-- ingredient 사진 업로드 -->	 
+      ingredient 사진 업로드	 
      	 <div id="fileUpload2">
        
 	      <!-- <form id="ingredient_upload" action="/web/ingrefileupload.file" method=post enctype="multipart/form-data">
 	      <input type="file" name="file" capture="environment" accept="image/*" required>
 	      <input type="submit" value="ingre_upload">
-	      </form> -->
+	      </form> 
      	<img id="pictureFromCamera"></img>
-     	 </div>  
-
+     	 </div>   -->
+ 
     </main>
       <footer>
         <div>
           <span class="fixed-btn">
             <p>
-            <form id="ingredient_upload" action="/web/ingrefileupload.file" method=post enctype="multipart/form-data">
-            <!-- 재료사진 업로드 -->
-            <label for="cameraFileInput">
-              <a onclick=""><img src="${cpath}/resources/image/aside_icon_8.png"></a>
-              <input id="cameraFileInput" type="file" name="file" capture="environment" accept="image/*" required style="display:none">
-              </label>
-            </p>
+            <form id="" action="http://localhost:5000/predict" method=post enctype="multipart/form-data">
+	            <!-- 재료사진 업로드 -->
+	            <label for="cameraFileInput">
+	            <a onclick="cameraUpload"><img src="${cpath}/resources/image/aside_icon_8.png"></a>
+	            <input type="submit" value="upload">
+	            <input id="cameraFileInput" type="file" name="file" capture="environment" accept="image/*" required style="display:none">
+	            <input type="text" value="${userVO.member_id}" name="member_id" style="display:none">
+	            </label>           
             </form>
+            </p>
           </span>
           <!--<span class="fixed-btn"><p>클릭!</p></span>--> 
         </div>
