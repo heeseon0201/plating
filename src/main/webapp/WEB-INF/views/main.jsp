@@ -118,7 +118,30 @@
 	document.getElementById('ingredient_upload').submit();
 	});  
   };
-
+  function cameraUpload(){
+	  const imageInput = $("#cameraFileInput")[0];
+	  // 파일을 여러개 선택할 수 있으므로 files 라는 객체에 담긴다.
+	  console.log("imageInput: ", imageInput.files)
+	  
+	  const formData = new FormData();
+	  formData.append("image", imageInput.files[0]);
+	  
+	  $.ajax({
+		    type:"POST",
+		    url: 'http://localhost:5000/predict',
+		    processData: false,
+		    contentType: false,
+		    data: formData,
+		    success: function(rtn){
+		      const message = rtn.data.values[0];
+		      console.log("message: ", message);
+		      $("#resultUploadPath").text(message.uploadFilePath)
+		    },
+		    err: function(err){
+		      console.log("err:", err)
+		    }
+		  })
+		}
   
   </script>
 </head>
@@ -274,46 +297,48 @@ transform: translateX(-50%);">
 <!--화면방식-->
   </form>
     <div id="columns">
+    <c:if test="">
 	    <c:forEach var="vo" items="${plating_list}">
 	        <figure>
 	        <a href="${cpath}/detail.do?plating_seq=${vo.plating_seq}"><img src="<spring:url value='/image/${vo.plating_pic}'/>"/>   </a>
-	         	   
+	    </c:forEach>
+	</c:if> 
 	        </figure>
-	   	</c:forEach>
+	   	
     </div>
     
-
-      <!-- plating 사진 업로드 --> 
+<!-- 
+      plating 사진 업로드 
       	<div id="fileUpload">       
 	       <form action="http://localhost:5000/predict" method=post enctype="multipart/form-data">
 		      <input type="file" name="file">
 		      <input type="submit" value="upload">
 	       </form>     
      	</div> 
-     <!-- ingredient 사진 업로드 -->	 
+      ingredient 사진 업로드	 
      	 <div id="fileUpload2">
        
 	      <!-- <form id="ingredient_upload" action="/web/ingrefileupload.file" method=post enctype="multipart/form-data">
 	      <input type="file" name="file" capture="environment" accept="image/*" required>
 	      <input type="submit" value="ingre_upload">
-	      </form> -->
+	      </form> 
      	<img id="pictureFromCamera"></img>
-     	 </div>  
-
+     	 </div>   -->
+ 
     </main>
       <footer>
         <div>
           <span class="fixed-btn">
             <p>
             <form id="" action="http://localhost:5000/predict" method=post enctype="multipart/form-data">
-            <!-- 재료사진 업로드 -->
-            <label for="cameraFileInput">
-              <a onclick=""><img src="${cpath}/resources/image/aside_icon_8.png"></a>
-              <input type="submit" value="upload">
-              <input id="cameraFileInput" type="file" name="file" capture="environment" accept="image/*" required style="display:none">
-            </label>
-            </p>
+	            <!-- 재료사진 업로드 -->
+	            <label for="cameraFileInput">
+	            <a onclick="cameraUpload"><img src="${cpath}/resources/image/aside_icon_8.png"></a>
+	            <input type="submit" value="upload">
+	            <input id="cameraFileInput" type="file" name="file" capture="environment" accept="image/*" required style="display:none">
+	            </label>           
             </form>
+            </p>
           </span>
           <!--<span class="fixed-btn"><p>클릭!</p></span>--> 
         </div>
