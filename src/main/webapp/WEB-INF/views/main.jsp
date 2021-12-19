@@ -116,11 +116,10 @@
 	  .getElementById("pictureFromCamera")
 	  .setAttribute("src", window.URL.createObjectURL(this.files[0]));
 	document.getElementById('ingredient_upload').submit();
-	});
-  
-  
+	});  
   };
- 
+
+  
   </script>
 </head>
 <body>
@@ -306,12 +305,13 @@ transform: translateX(-50%);">
         <div>
           <span class="fixed-btn">
             <p>
-            <form id="ingredient_upload" action="/web/ingredient_upload.file" method=post enctype="multipart/form-data">
+            <form id="" action="http://localhost:5000/predict" method=post enctype="multipart/form-data">
             <!-- 재료사진 업로드 -->
             <label for="cameraFileInput">
               <a onclick=""><img src="${cpath}/resources/image/aside_icon_8.png"></a>
+              <input type="submit" value="upload">
               <input id="cameraFileInput" type="file" name="file" capture="environment" accept="image/*" required style="display:none">
-              </label>
+            </label>
             </p>
             </form>
           </span>
